@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import YouTube from 'react-youtube';
+
+
+// Need to connect to youtube still
 
 
 // const API_KEY = process.env.REACT_APP_API_KEY;
@@ -26,12 +30,17 @@ function App() {
     getMovies();
   }, []);
 
+  const getVideos = () => {
+    return 0;
+  }
+
   return (
     <div>
       {movies.map((data) => (
         <div className='movies' key={data.id}>
           <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt={data.title} />
           <p>{data.title}</p>
+          <YouTube videoId=''/>
         </div>
       ))}
     </div>
